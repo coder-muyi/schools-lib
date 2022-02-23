@@ -4,12 +4,11 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import Home from './Home';
-import './styles/App.css';
-import './styles/media-query.css';
-
+import Home from './pages/Home';
 import Topbar from './components/Topbar';
 import Footer from './components/Footer';
+import './styles/App.css';
+import './styles/media-query.css';
 
 const App = () => {
   return (
