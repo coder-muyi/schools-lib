@@ -4,6 +4,11 @@
 /* Utilities */
 :root {
   --heading-color: #34b8ba;
+  --layer-1: 5;
+  --layer-2: 10;
+  --layer-3: 15;
+  --layer-4: 20;
+  --layer-ground: 0;
 }
 
 body {
@@ -22,9 +27,6 @@ h2 {
 h3 {
   font-size: 1.7rem;
 }
-.h-black::is(h1, h2, h3, h4) {
-  color: black!important;
-}
 
 a {
   color: goldenrod!important;
@@ -42,7 +44,7 @@ a {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 20;
+  z-index: var(--layer-4);
 }
 
 .topbar .links {
@@ -56,6 +58,7 @@ a {
 .p-homepage {
   /* margin-top: 5em; */
   text-align: center;
+  overflow-x: hidden;
 }
 
 .hero {
@@ -78,7 +81,7 @@ a {
 }
 
 .hero__display--foreground {
-  z-index: 10;
+  z-index: var(layer-1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +89,7 @@ a {
 }
 
 .hero__display--background {
-  z-index: 1;
+  z-index: var(--layer-ground);
 }
 
 .hero__display--background .canvas {
@@ -99,6 +102,7 @@ a {
 }
 
 @keyframes blink {
+  
   from {
     opacity: 1;
   }
@@ -112,6 +116,7 @@ a {
   padding-bottom: 10em;
   position: relative;
   overflow: hidden;
+  z-index: var(--layer-1);
 }
 
 .home__section-1::before,
@@ -123,6 +128,8 @@ a {
   height: 20em;
   background: white;
   border-radius: 50%;
+  border-top: 20px solid var(--heading-color);
+  z-index: var(--layer-ground);
 }
 .home__section-1::before {
   left: -10em;
@@ -147,7 +154,8 @@ a {
   padding: 3em 1em;
   margin: 1em;
   border: 2px solid var(--heading-color);
-  background: white;;
+  background: white;
+  /* z-index: var(--layer-2); */
 }
 
 .home__boxes .box:first-child {

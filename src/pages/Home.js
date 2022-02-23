@@ -1,7 +1,7 @@
 import React from 'react';
 import Canvas from '../components/Canvas';
 import { heroDraw, heroInit } from '../components/data/canvas-data';
-import './styles/Home.css';
+import '../styles/Home.css';
 
 const Hero = () => {
 

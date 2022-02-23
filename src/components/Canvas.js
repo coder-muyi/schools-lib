@@ -25,9 +25,9 @@ const Canvas = ({init, draw}) => {
       resizeCanvasToDisplaySize(canvas);
       draw(context, canvas)
     }
-    init(canvas);
+    // init(canvas);
     updateCanvas();
-  }, [draw]);
+  }, []);
   
   return (
     <canvas className='canvas' ref={canvasRef} />
