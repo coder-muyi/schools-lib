@@ -1,0 +1,9 @@
+@media (min-width: 600px) {
+  .home__boxes {
+    flex-direction: row;
+  }
+  
+  .home__section-1 .box:nth-child(2) {
+    transform: scale(1.1);
+  }
+}
