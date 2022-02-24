@@ -8,7 +8,7 @@
   --layer-2: 10;
   --layer-3: 15;
   --layer-4: 20;
-  --layer-ground: 0;
+  --layer-ground: 1;
 }
 
 body {
@@ -81,11 +81,11 @@ a {
 }
 
 .hero__display--foreground {
-  z-index: var(layer-1);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  z-index: var(--layer-1);
 }
 
 .hero__display--background {
@@ -102,7 +102,6 @@ a {
 }
 
 @keyframes blink {
-  
   from {
     opacity: 1;
   }

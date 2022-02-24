@@ -10,7 +10,8 @@ SystemJS.config({
   meta: {
     '*.js': {
       'babelOptions': {
-        react: true
+        react: true,
+        es2015: false
       },
     },
     '*.css': {
