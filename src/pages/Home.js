@@ -13,7 +13,7 @@ const Hero = () => {
       
       <div className='hero__display'>
         <div className='hero__display--foreground'>
-          <h1>Schools<span className='hero__blink'>_</span>lib</h1>
+          <h1>sHoT<span className='hero__blink'>_</span>Nika</h1>
         </div>
         <div className='hero__display--background'>
           <Canvas init={heroInit} draw={heroDraw} />
