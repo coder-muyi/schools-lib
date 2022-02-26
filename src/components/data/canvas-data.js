@@ -14,9 +14,9 @@ class Ball {
   
   draw(ctx) {
     ctx.beginPath()
-    //ctx.fillStyle = heroColor;
+    ctx.fillStyle = heroColor;
     
-    ctx.strokeStyle = heroColor;
+    ctx.strokeStyle = 'white';
     ctx.lineWidth = 5;
     
     ctx.arc(
@@ -25,17 +25,16 @@ class Ball {
       0,
       Math.PI * 2
     )
-    //ctx.stroke()
-    // ctx.fill()
-    ctx.stroke()
+    ctx.stroke();
+    ctx.fill();
   }
   
-  bounceDetection(canvas) {
+  bounceDetection(W, H) {
     if (this.velX > 0 || this.velX < 0) {
       // bottom
-      if (this.y + this.radius >= canvas.height) {
+      if (this.y + this.radius >= H) {
         this.velY *= -this.bounce
-        this.y = canvas.height - this.radius
+        this.y = H - this.radius
         this.velX *= friction
       }
       // top
@@ -50,9 +49,9 @@ class Ball {
         this.x = this.radius
       }
       // right
-      if (this.x + this.radius >= canvas.width) {
+      if (this.x + this.radius >= W) {
         this.velX *= -this.bounce
-        this.x = canvas.width - this.radius
+        this.x = W - this.radius
       }
     
       // reset insignificant amounts to 0
@@ -71,7 +70,7 @@ class Ball {
       this.y += this.velY
     } else {
       this.x += this.linear;
-      if (this.x - this.radius <= 0 || this.x + this.radius >= canvas.width) {
+      if (this.x - this.radius <= 0 || this.x + this.radius >= W) {
         this.linear *= -1;
       }
     }
@@ -84,12 +83,12 @@ export const heroInit = (canvas) => {
   
   for (let n = 0; n < 20; n++) {
     balls.push(new Ball(
-      Math.random() * 100 + 5, 
+      Math.random() * 80 + 5, 
       canvas.width / 2, 
       canvas.height / 2,
       (Math.random() * 15 + 5) * (Math.floor(Math.random() * 2) || -1),
       (Math.random() * 15 + 5) * (Math.floor(Math.random() * 2) || -1),
-      Math.random() * 5
+      Math.random() * 3
     ));
   }
   
@@ -101,13 +100,13 @@ export const heroDraw = (ctx, canvas) => {
   // draw stuff
   for (let ball of balls) {
     ball.draw(ctx);
-    ball.bounceDetection(canvas);
+    ball.bounceDetection(canvas.width, canvas.height-3);
     
     ctx.beginPath();
     ctx.moveTo(0, canvas.height);
     ctx.lineTo(canvas.width, canvas.height);
     ctx.lineWidth = 3;
-    ctx.strokeStyle = 'grey';
+    ctx.strokeStyle = 'white';
     ctx.stroke();
   }
 }
