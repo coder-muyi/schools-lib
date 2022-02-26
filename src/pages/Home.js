@@ -13,7 +13,7 @@ const Hero = () => {
       
       <div className='hero__display'>
         <div className='hero__display--foreground'>
-          <h1>sHoT<span className='hero__blink'>_</span>Nika</h1>
+          <h1 className='logo'>sHoT<span className='hero__blink'>_</span>Nika</h1>
         </div>
         <div className='hero__display--background'>
           <Canvas init={heroInit} draw={heroDraw} />
@@ -31,15 +31,15 @@ const Home = () => {
         <section className='home__section home__section-1'>
           <h2 style={{color: 'white'}}>Take advantage of our platform</h2>
           <div className='home__boxes'>  
-            <div className='box'>
+            <div className='home__box'>
               <h3>For fun</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
             </div>
-            <div className='box'>
+            <div className='home__box'>
               <h3>For students</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
             </div>
-            <div className='box'>
+            <div className='home__box'>
               <h3>For parents</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </p>
             </div>
@@ -49,11 +49,11 @@ const Home = () => {
         <section className='home__section home__section-2'>
           <h2>Suitable for professionals</h2>
           <div className='home__boxes'>
-            <div className='box'>
+            <div className='home__box'>
               <h3>For teachers</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
             </div>
-            <div className='box'>
+            <div className='home__box'>
               <h3>For schools</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
             </div>

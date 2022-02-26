@@ -1,9 +1,14 @@
 @media (min-width: 600px) {
+  /*
+  .home__section-1 {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 96% 3%, 93% 0, 89% 3%, 83% 0, 80% 5%, 75% 0, 72% 4%, 69% 0, 64% 4%, 60% 0, 55% 2%, 47% 0, 41% 2%, 36% 0, 31% 3%, 25% 0, 17% 2%, 12% 0, 5% 2%, 0 0, 0 0);
+  }*/
+  
   .home__boxes {
     flex-direction: row;
   }
   
-  .home__section-1 .box:nth-child(2) {
-    transform: scale(1.1);
+  .home__section-1 .home__box:nth-child(2) {
+    tgransform: scale(1.1);
   }
 }

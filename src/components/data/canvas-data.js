@@ -1,5 +1,5 @@
 // Home page bouncing ball data
-let ctx, gravity, ball, friction, balls = [];
+let ctx, gravity, ball, friction, balls = [], heroColor = '#34b8ba';
 
 class Ball {
   constructor(radius, x, y, velX, velY, l) {
@@ -14,17 +14,20 @@ class Ball {
   
   draw(ctx) {
     ctx.beginPath()
-    ctx.fillStyle = 'grey'//'darkgoldenrod' //steelblue
-    ctx.strokeStyle = 'steelblue'
-    ctx.strokeWidth = '100px'
+    //ctx.fillStyle = heroColor;
+    
+    ctx.strokeStyle = heroColor;
+    ctx.lineWidth = 5;
+    
     ctx.arc(
       this.x, this.y,
       this.radius,
       0,
       Math.PI * 2
     )
+    //ctx.stroke()
+    // ctx.fill()
     ctx.stroke()
-    ctx.fill()
   }
   
   bounceDetection(canvas) {
@@ -81,7 +84,7 @@ export const heroInit = (canvas) => {
   
   for (let n = 0; n < 20; n++) {
     balls.push(new Ball(
-      Math.random() * 30 + 5, 
+      Math.random() * 100 + 5, 
       canvas.width / 2, 
       canvas.height / 2,
       (Math.random() * 15 + 5) * (Math.floor(Math.random() * 2) || -1),
@@ -95,10 +98,17 @@ export const heroInit = (canvas) => {
 export const heroDraw = (ctx, canvas) => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // draw the ball
+  // draw stuff
   for (let ball of balls) {
     ball.draw(ctx);
     ball.bounceDetection(canvas);
+    
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height);
+    ctx.lineTo(canvas.width, canvas.height);
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = 'grey';
+    ctx.stroke();
   }
 }
 
