@@ -19,7 +19,8 @@ const Slideshow = () => {
     duration: 2500,
     transitionDuration: 2000,
     autoPlay: true,
-    arrows: false
+    arrows: false,
+    pauseOnHover: false,
   }
   return (
     <div style={{}} className='hero__zoom'>
