@@ -3,8 +3,8 @@
 
 /* Utilities */
 :root {
-  --pry-color: #34b8ba;
-  --sec-color: #34b8ba;
+  --pry-color: #34b8ba; /* rgba(52, 184, 186, 1) */
+  --sec-color: ;
   --layer-1: 5;
   --layer-2: 10;
   --layer-3: 15;

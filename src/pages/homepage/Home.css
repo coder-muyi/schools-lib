@@ -5,7 +5,7 @@
 }
 
 .hero {
-  border-bottom: 1em dashed var(--sec-color);
+  border-bottom: 1em dashed var(--pry-color);
   position: relative;
   min-height: 30rem;
 }
@@ -95,7 +95,7 @@
   position: relative;
   overflow: hidden;
   z-index: var(--layer-1);
-  background: linear-gradient(180deg, var(--pry-color) 10%, white);
+  background: linear-gradient(180deg, var(--pry-color), white 80%);
   border-radius: 5em 5em 0 0;
   margin-top: 1rem;
   clip-path: polygon(0 100%, 100% 100%, 100% 0, 93% 1%, 88% 0, 81% 1%, 76% 0, 70% 1%, 63% 0, 55% 1%, 48% 0, 41% 1%, 35% 0, 28% 1%, 21% 0, 15% 1%, 9% 0, 5% 1%, 0 0);
@@ -110,7 +110,7 @@
   height: 20em;
   background: white;
   border-radius: 50%;
-  border-top: 2em solid var(--sec-color);
+  border-top: 2em solid var(--pry-color);
   z-index: var(--layer-ground-1);
 }
 .home__section-1::before {
@@ -124,11 +124,17 @@
   padding: 3em 0 1em 0;
 }
 
+.home__section-1 .home__box {
+  background: white;
+  padding: 3em 1em;
+  border-radius: 30%;
+}
+
 .home__boxes {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   padding-bottom: 1em;
+  flex-wrap: wrap;
 }
 
 .home__box {
@@ -136,21 +142,36 @@
   transition: .4s;
   min-width: 15rem;
   margin: 1em;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+  position: relative;
+  overflow: hidden;
 }
 
 .home__box h3 {
-  color: var(--sec-color);
+  color: var(--pry-color);
 }
 
-.home__section-1 .home__box {
-  background: white;
-  padding: 3em 1em;
-  border-radius: 30%;
+.home__box p {
+  font-size: 0.85rem!important;
+}
+
+.home__box::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	transition: 0.5s;
+	background: linear-gradient(90deg,transparent,rgba(52, 184, 186, .4),transparent);
 }
 
 .home__box:hover {
   transform: scale(1.06)!important;
   border: var(--pry-color);
+}
+.home__box:hover::before {
+	left: 100%;
 }
 
 .home__box.scrolled {
@@ -183,13 +204,18 @@
 }
 
 .home__section-2 {
-  justify-content: center;
+  
+}
+
+.home__section-2 .home__boxes {
+  margin: 5em 0;
 }
 
 .home__section-2 .home__box {
   border: .3em solid var(--pry-color);
+  border-left: 1em dashed var(--pry-color);
   max-width: 300px;
-  border-radius: 0;
+  padding: 3em 0;
 }
 
 @media (min-width: 600px) {
@@ -200,12 +226,12 @@
   .home__box {
     --br: 5em;
     max-width: 300px;
-    padding: 0 1em;
+    padding: 0 1em; 
     margin: .5em;
   }
 
   .home__boxes {
-    flex-direction: row;
+    
   }
 }
 
