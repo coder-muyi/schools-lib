@@ -8,8 +8,13 @@ const Home = () => {
   const boxContainer2Ref = useRef(null);
   
   useEffect(() => {
-    scrollEffect(boxContainer1Ref.current);
-    scrollEffect(boxContainer2Ref.current);
+    let f1 = scrollEffect(boxContainer1Ref.current);
+    let f2 = scrollEffect(boxContainer2Ref.current);
+    
+    return () => {
+      window.removeEventListener('scroll', f1);
+      window.removeEventListener('scroll', f2);
+    }
   }, []);
 
   return (
