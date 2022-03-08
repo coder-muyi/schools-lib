@@ -80,7 +80,7 @@ class Ball {
 export const heroInit = (canvas) => {
   gravity = 0.25;
   friction = 0.98;
-  
+  balls = [];
   for (let n = 0; n < 20; n++) {
     balls.push(new Ball(
       Math.random() * 80 + 5, 
