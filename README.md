@@ -1,3 +1,3 @@
 # sHoT_nika
 
-Visit site here[https://coder-muyi.github.io/shotnika/]
+Visit site here[https://codermuyi.github.io/shotnika/]
